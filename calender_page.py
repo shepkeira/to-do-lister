@@ -7,5 +7,5 @@ import main_page
 
 def set_up(content):
     clear(content)
-    print("proj list page")
-    #TODO 1: create project page
+    print("calender page")
+    #TODO 6: create calender page

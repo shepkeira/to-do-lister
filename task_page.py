@@ -7,5 +7,5 @@ import main_page
 
 def set_up(content, task, project):
     clear(content)
-    #TODO 4: create task page
+    #TODO 3: create task page
     print("task page")

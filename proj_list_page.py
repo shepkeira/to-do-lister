@@ -52,7 +52,7 @@ def set_up(content):
         title_label.grid(column=0, row=0)
         date_label = Label(project_frame, text=x.due_date, bg=gf.dark_pink, width=15)
         date_label.grid(column=0, row=1)
-        proj_btn = Button(project_frame, text="View", bg=gf.grey_pink, command= lambda: proj_page.set_up(content, x))
+        proj_btn = Button(project_frame, text="View", bg=gf.grey_pink, command= lambda: proj_page.set_up(content, x, projects))
         proj_btn.grid(column=1, row=0, rowspan=2)
         project_labels.append(project_frame)
         i = i + 1

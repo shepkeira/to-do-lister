@@ -1,11 +1,52 @@
 from tkinter import *
 from global_functions import clear
+import global_functions as gf
 import proj_list_page
 import task_list_page
 import calender_page
 import main_page
+import json
+import task_page
+import new_task_page
 
-def set_up(content, proj):
+def set_up(content, proj, projects):
     clear(content)
-    print("proj page")
-    #TODO 3: create task page
+
+    Proj_Name_Label = Label(content, text=proj.title, bg=gf.light_pink)
+    Proj_Name_Label.grid(column=0, row=0)
+    Proj_Date_Label = Label(content, text=proj.due_date, bg=gf.light_pink)
+    Proj_Date_Label.grid(column=0, row=1)
+    urgent_text = "Urgent: "
+    important_text = "Important: "
+    if proj.urgent:
+        urgent_text = urgent_text + "Yes"
+    else:
+        urgent_text = urgent_text + "No"
+    if proj.important:
+        important_text = important_text + "Yes"
+    else:
+        important_text = important_text + "No"
+    Proj_U_Label = Label(content, text=urgent_text, bg=gf.light_pink)
+    Proj_U_Label.grid(column=1, row=0)
+    Proj_I_Label = Label(content, text=important_text, bg=gf.light_pink)
+    Proj_I_Label.grid(column=1, row=1)
+
+    task_labels = []
+    i = 2
+    for y in proj.tasks:
+        task_frame = Frame(content, highlightthickness=1, highlightbackground="black", bg=gf.dark_pink, width=15,
+                           height=5)
+
+        task_frame.grid(column=0, row=i, padx=10, pady=10)
+        title_label = Label(task_frame, text=proj.title + ": " + y.title, bg=gf.dark_pink, width=15)
+        title_label.grid(column=0, row=0)
+        date_label = Label(task_frame, text=y.due_date, bg=gf.dark_pink, width=15)
+        date_label.grid(column=0, row=1)
+        proj_btn = Button(task_frame, text="View", bg=gf.grey_pink, command=lambda: task_page.set_up(content, y, proj))
+        proj_btn.grid(column=1, row=0, rowspan=2)
+        task_labels.append(task_frame)
+        i = i + 1
+
+    New_Task_Btn = Button(content, text="New Task", command=lambda: new_task_page.set_up(content, proj, proj.tasks, projects), bg=gf.light_blue)
+    New_Task_Btn.grid(column=0, row=i)
+    print("proj list page")
