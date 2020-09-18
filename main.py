@@ -1,7 +1,5 @@
 from tkinter import *
-from tkinter import ttk
-import main_page
-
+#TODO add clear content
 
 def set_up():
     root = Tk()
@@ -9,13 +7,22 @@ def set_up():
     return root
 
 
-def start(root, content):
-    main_page.set_up(content)
-    root.mainloop()
+def menubar(root):
+    menubar = Menu(root)
+    pageMenu = Menu(menubar)
+    pageMenu.add_command(label="Home")
+    menubar.add_cascade(label="Home", menu=pageMenu)
+    return menubar
 
 
-root = set_up()
-content = Frame(root)
-content.grid(column=0, row=0)
+def start(content):
+    from main_page import Main_Page
+    Main_Page(content)#.grid(column=0, row=0)
+    content.mainloop()
 
-start(root, content)
+
+#root = set_up()
+content = set_up()
+#content.grid(column=0, row=0)
+
+start(content)
