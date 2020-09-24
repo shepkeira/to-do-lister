@@ -1,5 +1,4 @@
 from tkinter import *
-#TODO add clear content
 
 def set_up():
     root = Tk()

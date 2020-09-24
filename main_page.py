@@ -20,7 +20,7 @@ class Main_Page:
                              height=5, bg=gf.dark_pink)
         task_button = Button(content, text="Tasks", command=lambda: (Task_List_Page(content).grid(column=0, row=0)), width=15,
                              height=5, bg=gf.dark_pink)
-        calender_button = Button(content, text="Calender", command=lambda: (Calender_Page(content).grid(column=0, row=0)), width=15,
+        calender_button = Button(content, text="Calender", command=lambda: (Calender_Page(content)), width=15,
                                  height=5, bg=gf.dark_pink)
         reset_button = Button(content, text="Reset", command=gf.reset, width=15, height=5, bg=gf.dark_pink)
         proj_button.grid(column=0, row=0, padx=10, pady=10)
