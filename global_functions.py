@@ -39,7 +39,7 @@ class Task:
 class Project:
     def __init__(self, title, due_date, description, urgent, important, tasks):
         self.title = title
-        self.due_date = due_date #TODO 2: make into date format to use later
+        self.due_date = due_date
         self.description = description
         self.urgent = urgent
         self.important = important
@@ -47,7 +47,7 @@ class Project:
 
     def __init__(self, title, due_date, description, urgent, important):
         self.title = title
-        self.due_date = due_date #TODO 1: make into date format to use later
+        self.due_date = due_date
         self.description = description
         self.urgent = urgent
         self.important = important

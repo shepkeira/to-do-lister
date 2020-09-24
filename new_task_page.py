@@ -17,7 +17,7 @@ class New_Task_Page:
         proj_title_label.grid(column=0, row=0)
         proj_title_label = Label(content, text="Task Name: ")
         proj_title_label.grid(column=0, row=1)
-        due_date_label = Label(content, text="Due Date and Time: ")
+        due_date_label = Label(content, text="Due Date and Time (dd/mm/yy 24:00): ")
         due_date_label.grid(column=0, row=2)
         urgent_label = Label(content, text="Urgent: ")
         urgent_label.grid(column=0, row=3)
